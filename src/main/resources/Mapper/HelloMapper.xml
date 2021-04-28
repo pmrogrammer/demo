@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.HelloMapper" >
+
+    <select id="getzonglan" resultType="String">
+        select shuliang from tiwen
+    </select>
+
+    <select id="seetiwen" resultType="java.util.Map">
+        select ROWNUM,shuliang, shijian from tiwen where bingrenBH=#{bingrenBH} order by shijian desc
+    </select>
+
+    <select id="seemaibo" resultType="java.util.Map">
+        select ROWNUM,shuliang, shijian from maibo where bingrenBH=#{bingrenBH} order by shijian desc
+    </select>
+
+    <select id="seexinlv" resultType="java.util.Map">
+        select ROWNUM,shuliang, shijian from xinlv where bingrenBH=#{bingrenBH} order by shijian desc
+    </select>
+
+    <select id="seexueyang" resultType="java.util.Map">
+        select ROWNUM,shuliang, shijian from xueyang where bingrenBH=#{bingrenBH} order by shijian desc
+    </select>
+
+    <select id="baojing" resultType="java.util.Map">
+        select ROWNUM,canshuMC, maxzhi, minzhi from baojing  order by canshuMC desc
+    </select>
+
+    <select id="login" resultType="String">
+        select username from login where username=#{username} and password=#{password}
+    </select>
+
+    <select id="insertbaojing" >
+        UPDATE baojing SET CANSHUMC = #{MC} , MAXZHI = #{max} , MINZHI = #{min} where CANSHUMC = #{MC}
+    </select>
+
+</mapper>

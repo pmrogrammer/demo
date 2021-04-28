@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "mybatis.datasource.url",
+      "type": "java.lang.String",
+      "description": "Description for mybatis.datasource.url."
+  }
+] }
